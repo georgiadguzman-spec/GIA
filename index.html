@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toetally Clean - Premium Shoe Cleaning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 300;
+            color: #000000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .accent {
+            color: #000000;
+        }
+        .subtle-gray {
+            color: #666666;
+        }
+        button, .btn {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        button:hover, .btn:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 400;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #333333;
+        }
+        /* Sections */
+        section {
+            padding: 120px 0;
+            min-height: 100vh;
+        }
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .hero img {
+            max-width: 400px;
+            height: auto;
+            margin: 40px 0;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+        }
+        .services-preview {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .service-preview {
+            text-align: center;
+            max-width: 200px;
+        }
+        .service-preview i {
+            font-size: 40px;
+            color: #000000;
+            margin-bottom: 10px;
+        }
+        .why-choose-us {
+            margin-top: 80px;
+            padding: 40px 0;
+            background-color: #f5f5f5;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+        .why-choose-us h3 {
+            margin-bottom: 20px;
+        }
+        .why-list {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .why-item {
+            text-align: center;
+            max-width: 200px;
+        }
+        /* Services */
+        .services {
+            background-color: #f5f5f5;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .service-card {
+            background: #ffffff;
+            padding: 40px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            text-align: left;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+        .service-note {
+            margin-top: 40px;
+            font-style: italic;
+            color: #666666;
+        }
+        /* My Clean Closet */
+        .closet-login {
+            max-width: 400px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+        .closet-dashboard {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .closet-item {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            margin: 20px 0;
+            text-align: left;
+        }
+        .status-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 10px 0;
+            position: relative;
+        }
+        .status-progress {
+            height: 100%;
+            background-color: #000000;
+            border-radius: 5px;
+            width: 50%; /* Example: 50% for In Cleaning */
+        }
+        /* Booking */
+        .booking-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+        .booking-form input, .booking-form select, .booking-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        /* Locations */
+        .locations {
+            background-color: #f5f5f5;
+        }
+        .branches {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .branch {
+            text-align: center;
+            max-width: 150px;
+        }
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .before {
+            opacity: 0;
+        }
+        .before, .after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .after {
+            opacity: 0;
+        }
+        .gallery-item:hover .after {
+            opacity: 1;
+        }
+        /* About */
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        /* Contact */
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 60px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+        }
+        .social-icons {
+            margin-top: 40px;
+        }
+        .social-icons a {
+            margin: 0 15px;
+            color: #000000;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #666666;
+        }
+        /* Footer */
+        footer {
+            background-color: #f5f5f5;
+            padding: 40px 0;
+            text-align: center;
+            color: #666666;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 20px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .services-preview, .why-list, .branches {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1 class="accent">Toetally Clean</h1>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#closet">My Closet</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <img src="https://via.placeholder.com/400x400?text=Clean+Sneakers+Hero" alt="Clean Sneakers Hero">
+            <h1>Revive your kicks. Stay <span class="accent">Toetally Clean.</span></h1>
+            <p>Premium shoe cleaning with eco-friendly care.</p>
+            <button class="btn">Book Now</button>
+            <div class="services-preview">
+                <div class="service-preview">
+                    <i class="fas fa-broom"></i>
+                    <h4>Deep Clean</h4>
+                    <p class="subtle-gray">₱580</p>
+                </div>
+                <div class="service-preview">
+                    <i class="fas fa-sun"></i>
+                    <h4>Whitening</h4>
+                    <p class="subtle-gray">₱500</p>
+                </div>
+                <div class="service-preview">
+                    <i class="fas fa-paint-brush"></i>
+                    <h4>Repaint</h4>
+                    <p class="subtle-gray">₱2,000</p>
+                </div>
+            </div>
+            <div class="why-choose-us">
+                <h3>Why Choose Us?</h3>
+                <div class="why-list">
+                    <div class="why-item">
+                        <i class="fas fa-clock"></i>
+                        <h5>Fast Turnaround</h5>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-star"></i>
+                        <h5>Quality Finish</h5>
+                    </div>
+                    <div class="why-item">
+                        <i class="fas fa-heart"></i>
+                        <h5>Premium Care</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Shoe Care Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Deep Clean</h3>
+                    <p class="subtle-gray">Upper, midsole, outsole, laces, insole, deodorizing + UV.</p>
+                    <p><strong>₱580</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Water Repellant Coating</h3>
+                    <p class="subtle-gray">Protects against water and stains.</p>
+                    <p><strong>₱300</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Midsole Whitening (Unyellowing/Repaint)</h3>
+                    <p class="subtle-gray">Restore brightness to midsoles.</p>
+                    <p><strong>₱500</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Shoe Color Restoration</h3>
+                    <p class="subtle-gray">Full color restoration service.</p>
+                    <p><strong>₱2,000</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Sole Shield Installation</h3>
+                    <p class="subtle-gray">Protect soles from wear.</p>
+                    <p><strong>₱800</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Reglue Service</h3>
+                    <p class="subtle-gray">Repair and reglue shoe parts.</p>
+                    <p><strong>₱2,800</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Cap Cleaning</h3>
+                    <p class="subtle-gray">Clean caps and accessories.</p>
+                    <p><strong>₱450</strong></p>
+                </div>
+                <div class="service-card">
+                    <h3>Bag Cleaning</h3>
+                    <p class="subtle-gray">Small ₱1,400 | Medium ₱1,900 | Large ₱2,800 | XL ₱3,800.</p>
+                    <p><strong>Varies</strong></p>
+                </div>
+            </div>
+            <p class="service-note">Free pickup and delivery within Metro Manila for 9 pairs or more. Drop off 9 pairs and get 1 free cleaning.</p>
+        </div>
+    </section>
+
+    <section id="closet">
+        <div class="container">
+            <h2>My Clean Closet</h2>
+            <div id="login-section" class="closet-login">
+                <h3>Login</h3>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button class="btn" onclick="login()">Login</button>
+                <p>Don't have an account? <a href="#" onclick="signup()">Sign Up</a></p>
+            </div>
+            <div id="dashboard" style="display: none;">
+                <div class="closet-dashboard">
+                    <div class="closet-item">
+                        <h4>Shoe Model: Nike Air Max</h4>
+                        <p>Service: Deep Clean</p>
+                        <p>Date Submitted: 2023-10-01</p>
+                        <div class="status-bar">
+                            <div class="status-progress" style="width: 75%;"></div> <!-- In Cleaning -->
+                        </div>
+                        <p>Status: In Cleaning</p>
+                        <img src="https://via.placeholder.com/200x150?text=Before" alt="Before">
+                        <img src="https://via.placeholder.com/200x150?text=After" alt="After" style="display: none;">
+                    </div>
+                    <!-- Add more items as needed -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking">
+        <div class="container">
+            <h2>Book Your Service</h2>
+            <form class="booking-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="tel" name="contact" placeholder="Contact" required>
+                <select name="shoe-type" required>
+                    <option value="">Shoe Type</option>
+                    <option value="sneakers">Sneakers</option>
+                    <option value="boots">Boots</option>
+                </select>
+                <select name="service" required>
+                    <option value="">Service</option>
+                    <option value="deep-clean">Deep Clean</option>
+                    <option value="whitening">Whitening</option>
+                </select>
+                <input type="file" name="photo" accept="image/*">
+                <select name="dropoff-pickup" required>
+                    <option value="">Drop-off or Pickup
