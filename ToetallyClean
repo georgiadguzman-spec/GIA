@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toetally Clean - Premium Shoe Cleaning</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #000000;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+        .accent {
+            color: #000000;
+        }
+        .subtle-gray {
+            color: #666666;
+        }
+        button, .btn {
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        button:hover, .btn:hover {
+            background-color: #333333;
+            transform: translateY(-2px);
+        }
+        /* Navigation */
+        nav {
+            background-color: #ffffff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav img {
+            height: 50px;
+            width: auto;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #000000;
+            font-weight: 500;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #333333;
+        }
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background: #f9f9f9;
+        }
+        .hero img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 40px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* Services */
+        .services {
+            padding: 100px 0;
+        }
+        .services h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .service-card {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .service-card .content {
+            padding: 20px;
+        }
+        .service-card h3 {
+            margin-bottom: 10px;
+        }
+        .service-card p {
+            margin-bottom: 15px;
+            color: #666666;
+        }
+        .service-card .price {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        /* Testimonials */
+        .testimonials {
+            background: #f9f9f9;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .testimonials h2 {
+            margin-bottom: 60px;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .testimonial {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        .testimonial cite {
+            font-weight: 600;
+        }
+        /* Locations */
+        .locations {
+            padding: 100px 0;
+        }
+        .locations h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .branches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        .branch {
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+        }
+        .branch h4 {
+            margin-bottom: 10px;
+        }
+        .branch p {
+            margin: 5px 0;
+            color: #666666;
+        }
+        .branch iframe {
+            width: 100%;
+            height: 200px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        /* Gallery */
+        .gallery {
+            background: #f9f9f9;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .gallery h2 {
+            margin-bottom: 60px;
+        }
+        .gallery-slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .gallery-item {
+            min-width: 300px;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        .gallery-item:hover .before {
+            opacity: 0;
+        }
+        .before, .after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .after {
+            opacity: 0;
+        }
+        .gallery-item:hover .after {
+            opacity: 1;
+        }
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+        }
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .faq-item {
+            margin-bottom: 30px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .faq-item h4 {
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .faq-item p {
+            display: none;
+            color: #666666;
+        }
+        /* Booking */
+        .booking {
+            background: #f9f9f9;
+            padding: 100px 0;
+        }
+        .booking h2 {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .booking-form input, .booking-form select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Footer */
+        footer {
+            background: #000000;
+            color: #ffffff;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        footer ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        footer li {
+            margin: 0 15px;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #ffffff;
+            font-size: 20px;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 60px 20px;
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .services-grid, .testimonials-grid, .branches {
+                grid-template-columns: 1fr;
+            }
+            footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <img src="https://via.placeholder.com/150x50?text=Your+Logo+Here" alt="Toetally Clean Logo">
+            <ul ⬤
